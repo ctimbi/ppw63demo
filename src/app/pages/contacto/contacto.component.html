@@ -3,14 +3,14 @@
 
 <form>
     <label for="txtCedula">Cédula</label>-
-    <input id="txtCedula" name="txtCedula" [(ngModel)]="id"/>
+    <input id="txtCedula" name="txtCedula" [(ngModel)]="persona.id"/>
     <br>
     <label for="txtCedula">Nombre</label>
-    <input id="txtNombre" name="txtNombre" [(ngModel)]="name"/>
+    <input id="txtNombre" name="txtNombre" [(ngModel)]="persona.name"/>
     <br>
-
+    <button (click)="savePersona()">Guardar</button>
 </form>
 
 <button (click)="goAcerca()">Acerca de</button>
+<button (click)="goListado()">Listado</button>
 
-{{name}} - {{id}}

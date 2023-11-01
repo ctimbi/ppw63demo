@@ -9,6 +9,6 @@ export class MenuComponent {
   paginas = [
     {titulo: 'Acerca de', path: 'paginas/acerca'},
     {titulo: 'Contacto', path: 'paginas/contacto'},
-    {titulo: 'Mapa del sitio', path: 'paginas/mapa'},
+    {titulo: 'Listado', path: 'paginas/listado-contactos'},
   ]
 }

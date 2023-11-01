@@ -7,13 +7,15 @@ import { AcercadeComponent } from './pages/acercade/acercade.component';
 import { ContactoComponent } from './pages/contacto/contacto.component';
 import { MenuComponent } from './menu/menu.component';
 import { FormsModule } from '@angular/forms';
+import { ListaContactosComponent } from './pages/lista-contactos/lista-contactos.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     AcercadeComponent,
     ContactoComponent,
-    MenuComponent
+    MenuComponent,
+    ListaContactosComponent
   ],
   imports: [
     BrowserModule,

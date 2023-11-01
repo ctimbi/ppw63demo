@@ -1,0 +1,7 @@
+<p>lista-contactos works!</p>
+
+<ul>
+    <li *ngFor="let contacto of contactos">
+        <a (click)="goEditar(contacto)">{{contacto.name}}</a>
+    </li>
+</ul>
