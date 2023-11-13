@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
 import { Persona } from 'src/app/domain/persona';
+import { ContactosFirebaseService } from 'src/app/services/contactos-firebase.service';
 import { ContactosService } from 'src/app/services/contactos.service';
 
 @Component({
@@ -16,7 +17,8 @@ export class ContactoComponent {
   persona: Persona = new Persona();
 
   constructor(private router: Router, 
-    private contactoServices: ContactosService){ 
+    private contactoServices: ContactosService,
+    private contactoFirebaseService: ContactosFirebaseService){ 
 
       let params = this.router.getCurrentNavigation()?.extras.queryParams;
       if(params){
@@ -28,8 +30,11 @@ export class ContactoComponent {
 
   savePersona(){
     this.contactoServices.addContacto(this.persona)
-    this.persona = new Persona();
+    
     console.log('contacots', this.contactoServices.getContactos())
+  
+    this.contactoFirebaseService.save(this.persona)
+    this.persona = new Persona();
   }
 
   goAcerca(){

@@ -9,13 +9,17 @@ import { ContactosService } from 'src/app/services/contactos.service';
   templateUrl: './lista-contactos.component.html',
   styleUrls: ['./lista-contactos.component.scss']
 })
-export class ListaContactosComponent {
+export class ListaContactosComponent  {
 
   contactos:Persona[] = []
+
+  listaContactos: any
 
   constructor(private contactoService: ContactosService,
       private router: Router, private contactosFirebaseService: ContactosFirebaseService){
     this.contactos = contactoService.getContactos()
+
+    this.listaContactos = this.contactosFirebaseService.getAll()
   }
 
   goEditar(contacto: any){
