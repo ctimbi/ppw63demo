@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { NavigationExtras, Router } from '@angular/router';
 import { Persona } from 'src/app/domain/persona';
+import { ContactosFirebaseService } from 'src/app/services/contactos-firebase.service';
 import { ContactosService } from 'src/app/services/contactos.service';
 
 @Component({
@@ -13,7 +14,7 @@ export class ListaContactosComponent {
   contactos:Persona[] = []
 
   constructor(private contactoService: ContactosService,
-      private router: Router){
+      private router: Router, private contactosFirebaseService: ContactosFirebaseService){
     this.contactos = contactoService.getContactos()
   }
 

@@ -9,6 +9,11 @@ import { MenuComponent } from './menu/menu.component';
 import { FormsModule } from '@angular/forms';
 import { ListaContactosComponent } from './pages/lista-contactos/lista-contactos.component';
 
+import { provideFirebaseApp, getApp, initializeApp } from '@angular/fire/app';
+import { getFirestore, provideFirestore } from '@angular/fire/firestore';
+import { environment } from 'src/environments/environments';
+import { FIREBASE_APP_NAME, FIREBASE_OPTIONS } from '@angular/fire/compat';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -18,11 +23,15 @@ import { ListaContactosComponent } from './pages/lista-contactos/lista-contactos
     ListaContactosComponent
   ],
   imports: [
+    provideFirebaseApp(() => initializeApp(environment.firebaseConfig)),
+    provideFirestore(() => getFirestore()),
     BrowserModule,
     AppRoutingModule,
     FormsModule
   ],
-  providers: [],
+  providers: [
+    { provide: FIREBASE_OPTIONS, useValue: environment.firebaseConfig}
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
