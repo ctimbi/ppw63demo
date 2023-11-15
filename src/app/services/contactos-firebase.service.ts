@@ -30,4 +30,9 @@ export class ContactosFirebaseService {
     console.log('persona', persona)
     return this.contactosRef.doc(uid).set(Object.assign({}, persona))
   }
+
+  getPersona(uid: string){
+    console.log('uid', uid)
+    return this.db.doc(this.path+'/'+uid).valueChanges()
+  }
 }

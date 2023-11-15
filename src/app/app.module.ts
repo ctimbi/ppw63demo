@@ -13,6 +13,7 @@ import { provideFirebaseApp, getApp, initializeApp } from '@angular/fire/app';
 import { getFirestore, provideFirestore } from '@angular/fire/firestore';
 import { environment } from 'src/environments/environments';
 import { FIREBASE_APP_NAME, FIREBASE_OPTIONS } from '@angular/fire/compat';
+import { ViewContactoComponent } from './pages/view-contacto/view-contacto.component';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,8 @@ import { FIREBASE_APP_NAME, FIREBASE_OPTIONS } from '@angular/fire/compat';
     AcercadeComponent,
     ContactoComponent,
     MenuComponent,
-    ListaContactosComponent
+    ListaContactosComponent,
+    ViewContactoComponent
   ],
   imports: [
     provideFirebaseApp(() => initializeApp(environment.firebaseConfig)),

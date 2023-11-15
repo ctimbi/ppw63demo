@@ -11,6 +11,7 @@
 
 <ul>
     <li *ngFor="let contacto of listaContactos | async">
-        <a (click)="goEditar(contacto)">{{contacto.name}}</a>
+        <a (click)="goEditar(contacto)">{{contacto.name}}</a> |
+        <a routerLink="/paginas/contacto/{{contacto.uid}}">{{contacto.name}}</a>
     </li>
 </ul>
