@@ -15,6 +15,7 @@ import { environment } from 'src/environments/environments';
 import { FIREBASE_APP_NAME, FIREBASE_OPTIONS } from '@angular/fire/compat';
 import { ViewContactoComponent } from './pages/view-contacto/view-contacto.component';
 import { ServiceWorkerModule } from '@angular/service-worker';
+import { AngularFirestoreModule } from '@angular/fire/compat/firestore';
 
 @NgModule({
   declarations: [
@@ -28,6 +29,7 @@ import { ServiceWorkerModule } from '@angular/service-worker';
   imports: [
     provideFirebaseApp(() => initializeApp(environment.firebaseConfig)),
     provideFirestore(() => getFirestore()),
+    AngularFirestoreModule.enablePersistence(),
     BrowserModule,
     AppRoutingModule,
     FormsModule,
