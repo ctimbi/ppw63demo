@@ -17,6 +17,10 @@ import { ViewContactoComponent } from './pages/view-contacto/view-contacto.compo
 import { ServiceWorkerModule } from '@angular/service-worker';
 import { AngularFirestoreModule } from '@angular/fire/compat/firestore';
 
+import { HttpClientModule } from '@angular/common/http';
+import { ClientesComponent } from './pages/clientes/clientes.component'
+
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -24,7 +28,8 @@ import { AngularFirestoreModule } from '@angular/fire/compat/firestore';
     ContactoComponent,
     MenuComponent,
     ListaContactosComponent,
-    ViewContactoComponent
+    ViewContactoComponent,
+    ClientesComponent
   ],
   imports: [
     provideFirebaseApp(() => initializeApp(environment.firebaseConfig)),
@@ -38,7 +43,8 @@ import { AngularFirestoreModule } from '@angular/fire/compat/firestore';
       // Register the ServiceWorker as soon as the application is stable
       // or after 30 seconds (whichever comes first).
       registrationStrategy: 'registerWhenStable:30000'
-    })
+    }),
+    HttpClientModule
   ],
   providers: [
     { provide: FIREBASE_OPTIONS, useValue: environment.firebaseConfig}

@@ -10,5 +10,6 @@ export class MenuComponent {
     {titulo: 'Acerca de', path: 'paginas/acerca'},
     {titulo: 'Contacto', path: 'paginas/contacto'},
     {titulo: 'Listado', path: 'paginas/listado-contactos'},
+    {titulo: 'Clientes', path: 'paginas/clientes'},
   ]
 }
